@@ -1,0 +1,27 @@
+{
+  "short_name": "앱코",
+  "name": "웨덜코디",
+  "start_url": "",
+  "description": "날씨에 따라 옷을 코디해주는 앱이에요.",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icons/WC64.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/WC192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/WC512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
