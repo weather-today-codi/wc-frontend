@@ -27,6 +27,10 @@ export const CardInner = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    padding: 0.9rem 0 0 0.2rem;
+  }
 `;
 
 export const CardImage = styled.img`
