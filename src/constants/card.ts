@@ -1,4 +1,4 @@
-import { CardProps } from "../components/Main/Card/index";
+import { CardProps } from "../components/Main/CardButton/index";
 
 import SUNIcon from "../assets/sun.png";
 import ClothesIcon from "../assets/clothes.png";

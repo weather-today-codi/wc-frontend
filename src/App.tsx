@@ -1,34 +1,21 @@
-import { Container } from "./components/layouts/Container";
-import { SuspenseImage } from "./components/common/SuspenseFallback";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import styled from "@emotion/styled";
-import { Navbar } from "./components/common/Navbar";
+import { Route, Routes } from "react-router-dom";
+import React from "react";
+import { NavbarContainer } from "./components/common/Navbar/Navbar";
+import { useCookies } from "react-cookie";
+import { NavbarImpl } from "./components/common/Navbar/NavbarImpl";
+import { QueryClientProvider } from "./hooks/queries/QueryClientProvider";
 
 const Main = React.lazy(() => import("./pages/main"));
 
-const AppMainContainer = styled.main`
-  flex: 1 1 auto;
-  padding: 4.9rem 2.4rem 2.4rem;
-  overflow: hidden;
-`;
-
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main />,
-    },
-  ]);
-  const [isLoading, setIsLoading] = useState(false);
-
+  const [cookies, _setCookie] = useCookies(["flow"]);
+  cookies.flow === "start" && NavbarContainer.setComponent(NavbarImpl);
   return (
-    <Container>
-      <AppMainContainer>
-        <RouterProvider router={router} />
-      </AppMainContainer>
-      <Navbar />
-    </Container>
+    <QueryClientProvider>
+      <Routes>
+        <Route index element={<Main />} />
+      </Routes>
+    </QueryClientProvider>
   );
 }
 
