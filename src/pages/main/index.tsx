@@ -11,7 +11,7 @@ import { AppLayout } from "../../components/layouts/AppLayout";
 import { SuspenseFallback } from "../../components/common/SuspenseFallback/index";
 
 const MainPage = () => {
-  const [cookies, setCookie] = useCookies();
+  const [_cookies, setCookie] = useCookies();
   const StartFlowSetCookieOnClick = () => {
     setCookie("flow", "start");
   };
