@@ -3,7 +3,7 @@ import { NavbarProps } from "./NavbarImpl";
 
 export const NavbarFirstFlow = React.memo(
   forwardRef<HTMLDivElement, NavbarProps>((_props, ref) => {
-    return <div ref={ref}>ㅁㄴ</div>;
+    return <div ref={ref}></div>;
   })
 );
 
