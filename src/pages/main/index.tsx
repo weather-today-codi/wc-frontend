@@ -17,7 +17,7 @@ const MainPage = () => {
   };
   const { data, isLoading } = useGetCurrentWeather(
     "Seoul",
-    process.env.REACT_APP_API_LEY
+    import.meta.env.VITE_APP_API_KEY
   );
   console.log(data);
   return (
