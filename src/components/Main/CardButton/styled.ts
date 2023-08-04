@@ -20,7 +20,7 @@ export const CardElement = styled.button`
 `;
 
 export const CardInner = styled.div`
-  padding: 1.2rem 0.9rem;
+  padding: 0.9 0 0 0.9rem;
 
   width: 100%;
   height: 100%;
