@@ -1,19 +1,20 @@
 import { Route, Routes } from "react-router-dom";
-import React from "react";
-import { NavbarContainer } from "./components/common/Navbar/Navbar";
-import { useCookies } from "react-cookie";
-import { NavbarImpl } from "./components/common/Navbar/NavbarImpl";
-import { QueryClientProvider } from "./hooks/queries/QueryClientProvider";
+import React, { Suspense, useEffect } from "react";
+import { QueryClientProvider } from "@/hooks/queries/QueryClientProvider";
+import WeatherPage from "@/pages/weather";
+import { SuspenseFallback } from "@/components/common/SuspenseFallback/index";
 
-const Main = React.lazy(() => import("./pages/main"));
+const Main = React.lazy(() => import("@/pages/main"));
 
 function App() {
-  const [cookies, _setCookie] = useCookies(["flow"]);
-  cookies.flow === "start" && NavbarContainer.setComponent(NavbarImpl);
   return (
     <QueryClientProvider>
       <Routes>
         <Route index element={<Main />} />
+        <Route
+          element={<Suspense fallback={<SuspenseFallback />}></Suspense>}
+        />
+        <Route path="weather" element={<WeatherPage />} />
       </Routes>
     </QueryClientProvider>
   );
