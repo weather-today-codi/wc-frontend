@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
-export const CardElement = styled.button`
+export const CardElement = styled(Link)`
   width: 11rem;
   height: 11rem;
 
@@ -9,14 +10,14 @@ export const CardElement = styled.button`
   background-color: #fafafc;
   margin: auto;
 
+  text-decoration: none;
+
   cursor: pointer;
 
   :active {
     transform: scale(0.98);
   }
   transition: transform 0.2s;
-
-  font-family: "Pretendard Variable";
 `;
 
 export const CardInner = styled.div`

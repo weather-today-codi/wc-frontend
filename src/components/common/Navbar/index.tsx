@@ -12,17 +12,17 @@ export interface NavbarMeta {
 }
 
 export interface NavbarProps {
-  navbarArray: NavbarMeta[];
+  navbarButtonArray: NavbarMeta[];
 }
 
-export const _Navbar = forwardRef<HTMLDivElement, NavbarProps>((props, ref) => {
+export const Navbar = forwardRef<HTMLDivElement, NavbarProps>((props, ref) => {
   props = {
     ...props,
   };
   return (
     <S.NavbarElement ref={ref}>
       <S.NavbarUnOrderList>
-        {props.navbarArray.map((menu, index) => (
+        {props.navbarButtonArray.map((menu, index) => (
           <ul key={index}>
             <S.NavbarMenu to={menu.path}>
               <FontAwesomeIcon icon={menu.icon} size="lg" />
@@ -34,5 +34,3 @@ export const _Navbar = forwardRef<HTMLDivElement, NavbarProps>((props, ref) => {
     </S.NavbarElement>
   );
 });
-
-export const NavbarImpl = React.memo(_Navbar);
