@@ -1,3 +1,6 @@
+import { AreaEngTypes } from "@/constants/areaNames";
+import { WeatherIconMappingTypes } from "@/constants/weather";
+
 export type CurrentWeather = {
   base: string;
   could: {
@@ -18,11 +21,11 @@ export type CurrentWeather = {
     temp_max: number;
     temp_min: number;
   };
-  name: string;
+  name: keyof AreaEngTypes;
   weather: [
     {
       description: string;
-      icon: string;
+      icon: keyof WeatherIconMappingTypes;
     }
   ];
   wind: {

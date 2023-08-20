@@ -13,7 +13,7 @@ export type ButtonProps = ButtonCustomProps &
   React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ size = "medium", children }, ref) => {
+  ({ children }, ref) => {
     return <S.ButtonElement ref={ref}>{children}</S.ButtonElement>;
   }
 );
