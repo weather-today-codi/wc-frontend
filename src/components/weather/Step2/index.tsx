@@ -45,8 +45,8 @@ export const WeatherStep2: React.FC<WeatherStep2Props> = ({ area }) => {
   ];
 
   const CurrentTemp = `${ConvertTemperature(data?.main.temp)}°`;
-  const WeatherIcon = data ? weatherIconMapping[data.weather[0].icon] : null;
-  const TranslateArea = data ? areaEng[data.name] : null;
+  const WeatherIcon = data ? weatherIconMapping[data.weather[0].icon] : faUser;
+  const TranslateArea = data ? areaEng[data.name] : "";
   const WeatherInformation: React.FC = () => {
     return Information.map((detail) => (
       <S.InformationWrapper>
