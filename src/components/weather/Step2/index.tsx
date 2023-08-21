@@ -12,8 +12,9 @@ import {
   AreaEngTypes,
 } from "@/constants/areaNames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Information, weatherIconMapping } from "@/constants/weather";
+import { InformationTypes, weatherIconMapping } from "@/constants/weather";
 import { WeatherIconMappingTypes } from "../../../constants/weather";
+import { faTShirt, faUser, faWind } from "@fortawesome/free-solid-svg-icons";
 
 export type WeatherStep2Props = {
   area: keyof areaKrTypes;
@@ -25,15 +26,33 @@ export const WeatherStep2: React.FC<WeatherStep2Props> = ({ area }) => {
     areaKr[nowCountry],
     import.meta.env.VITE_APP_API_KEY
   );
+  const Information: InformationTypes[] = [
+    {
+      icon: faUser,
+      name: "체감온도",
+      s: `${ConvertTemperature(data?.main.feels_like)}°`,
+    },
+    {
+      icon: faWind,
+      name: "바람",
+      s: `${data?.wind.speed}m/s`,
+    },
+    {
+      icon: faTShirt,
+      name: "코디",
+      s: "오늘의 코디",
+    },
+  ];
+
   const CurrentTemp = `${ConvertTemperature(data?.main.temp)}°`;
   const WeatherIcon = data ? weatherIconMapping[data.weather[0].icon] : null;
   const TranslateArea = data ? areaEng[data.name] : null;
-  const test = [data?.main.temp, data?.wind, "오늘의 코디"];
   const WeatherInformation: React.FC = () => {
-    return Information.map((data) => (
+    return Information.map((detail) => (
       <S.InformationWrapper>
-        <FontAwesomeIcon icon={data.icon} />
-        <S.InformationName>{data.name}</S.InformationName>
+        <FontAwesomeIcon icon={detail.icon} size="xl" />
+        <S.InformationName>{detail.name}</S.InformationName>
+        <S.DetailInformation>{detail.s}</S.DetailInformation>
       </S.InformationWrapper>
     ));
   };
@@ -49,6 +68,9 @@ export const WeatherStep2: React.FC<WeatherStep2Props> = ({ area }) => {
           </S.WeatherIconContainer>
           <S.TempNumber>{CurrentTemp}</S.TempNumber>
         </S.TempInformation>
+        <S.InformationContainer>
+          <WeatherInformation />
+        </S.InformationContainer>
       </S.StepTwoContainer>
     </Suspense>
   );

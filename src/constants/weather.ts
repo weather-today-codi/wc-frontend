@@ -58,22 +58,8 @@ export const weatherIconMapping = {
   "50n": faSmog, // mist
 };
 
-type InformationTypes = {
+export type InformationTypes = {
   icon: IconDefinition;
   name: string;
+  s: string;
 };
-
-export const Information: InformationTypes[] = [
-  {
-    icon: faUser,
-    name: "체감온도",
-  },
-  {
-    icon: faWind,
-    name: "바람",
-  },
-  {
-    icon: faTShirt,
-    name: "코디",
-  },
-];

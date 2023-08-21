@@ -15,4 +15,5 @@ export const ButtonElement = styled.button`
   border: none;
   border-radius: 0.9rem;
   background-color: #0a0a0a;
+  cursor: pointer;
 `;

@@ -52,6 +52,20 @@ export const WeatherForm = styled.form`
   flex-direction: column;
 `;
 
+export const InformationContainer = styled.section`
+  display: flex;
+  gap: 7rem;
+
+  margin-top: 8rem;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const InformationInner = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const InformationWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -60,11 +74,15 @@ export const InformationWrapper = styled.div`
 export const InformationName = styled.p`
   color: #7b7b7b;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
+
+  text-align: center;
+  margin-top: 1.2rem;
 `;
 
 export const DetailInformation = styled.h3`
   color: #3e3e3e;
   font-size: 1.6rem;
-  font-weight: 300;
+  font-weight: 600;
+  text-align: center;
 `;
