@@ -1,4 +1,4 @@
-import { NavbarMeta } from "../components/common/Navbar/NavbarImpl";
+import { NavbarMeta } from "@/components/common/Navbar";
 import { faHome, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export const navbar: NavbarMeta[] = [
@@ -13,3 +13,5 @@ export const navbar: NavbarMeta[] = [
     path: "/profile",
   },
 ];
+
+// faChevronLeft
