@@ -1,6 +1,6 @@
 import * as S from "./styled";
-import { Title } from "@/components/main/Title";
-import { TitleDescription } from "@/components/main/TitleDescription";
+import { Title } from "../../components/main/Title";
+import { TitleDescription } from "../../components/main/TitleDescription";
 import { card } from "@/constants/card";
 import { CardButton } from "@/components/Main/CardButton";
 import { AppLayout } from "@/components/layouts/AppLayout";
