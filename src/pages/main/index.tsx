@@ -2,7 +2,7 @@ import * as S from "./styled";
 import { Title } from "@/components/main/Title";
 import { TitleDescription } from "@/components/main/TitleDescription";
 import { card } from "@/constants/card";
-import { CardButton } from "@/components/Main/CardButton";
+import { CardButton } from "@/components/main/CardButton";
 import { AppLayout } from "@/components/layouts/AppLayout";
 
 const MainPage = () => {
