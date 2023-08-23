@@ -2,9 +2,7 @@ import axios from "axios";
 import { CurrentWeather } from "./types";
 
 export const getCurrentWeather = async (city: string, apiKey: string) => {
-  console.log(city, apiKey);
   if (!city || !apiKey) {
-    console.log(city, apiKey);
     throw new Error("도시와 API 키는 필수 매개변수입니다.");
   }
 
